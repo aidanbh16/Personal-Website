@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "main": "server/app.ts",
   "scripts": {
-    "build": "rimraf dist && npx tsc",
+    "build": "rimraf dist && npx tsc && npx tailwindcss -i src/styles/input.css -o public/css/output.css",
     "start": "npm run build && node dist/app.js",
-    "dev": "concurrently \"npx tsc -w\" \"nodemon dist/app.js\""
+    "dev": "concurrently \"npx tsc -w\" \"nodemon --watch dist dist/app.js\" \"npx tailwindcss -i src/styles/input.css -o public/css/output.css --watch\""
   },
   "author": "Aidanbh16",
   "license": "ISC",
@@ -16,9 +16,12 @@
     "rimraf": "^6.0.1"
   },
   "devDependencies": {
+    "@tailwindcss/cli": "^4.0.14",
     "@types/express": "^5.0.0",
     "@types/node": "^22.13.10",
     "nodemon": "^3.1.9",
+    "postcss": "^8.5.3",
+    "tailwindcss": "^4.0.14",
     "typescript": "^5.8.2"
   }
 }
