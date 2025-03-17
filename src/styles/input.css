@@ -1,5 +1,2 @@
 @import "tailwindcss";
 
-.test-bg {
-    @apply bg-green-500;
-}
