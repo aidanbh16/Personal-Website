@@ -17,7 +17,7 @@ const fileStorageEngine = multer.diskStorage({
 })
 
 const fileFilter = (req: Request, file: Express.Multer.File, cb: multer.FileFilterCallback) => {
-    const allowedTypes = ["image/png", "image/jpeg", "application/pdf", "application/docx"]; // Allowed file types
+    const allowedTypes = ["image/png", "image/jpeg", "application/pdf", "application/docx"];
     if (allowedTypes.includes(file.mimetype)) {
         cb(null, true);
     } else {
@@ -26,8 +26,8 @@ const fileFilter = (req: Request, file: Express.Multer.File, cb: multer.FileFilt
 };
 
 const limiter = rateLimit({
-    windowMs: 15 * 60 * 1000, // 15 minutes
-    max: 10, // Limit each IP to 10 requests per window
+    windowMs: 15 * 60 * 1000,
+    max: 10,
     message: "Too many email requests. Please try again later.",
 });
 
