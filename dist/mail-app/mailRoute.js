@@ -16,6 +16,7 @@ const path_1 = __importDefault(require("path"));
 const promises_1 = __importDefault(require("fs/promises"));
 const express_1 = require("express");
 const mailApp_js_1 = __importDefault(require("./mailApp.js"));
+const express_rate_limit_1 = __importDefault(require("express-rate-limit"));
 const router = (0, express_1.Router)();
 const fileStorageEngine = multer_1.default.diskStorage({
     destination: (req, file, cb) => {
@@ -34,12 +35,17 @@ const fileFilter = (req, file, cb) => {
         cb(new Error("Invalid file type"));
     }
 };
+const limiter = (0, express_rate_limit_1.default)({
+    windowMs: 15 * 60 * 1000, // 15 minutes
+    max: 10, // Limit each IP to 10 requests per window
+    message: "Too many email requests. Please try again later.",
+});
 const upload = (0, multer_1.default)({
     storage: fileStorageEngine,
     limits: { fileSize: 2 * 1024 * 1024 },
     fileFilter: fileFilter
 });
-router.post("/", upload.single('file'), (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+router.post("/", limiter, upload.single('file'), (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const result = yield (0, mailApp_js_1.default)(req.body.name, req.body.company, req.body.email, req.body.phonenumber, req.body.message, req.file);
         if (result.success) {
