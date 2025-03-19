@@ -4,6 +4,7 @@ import path from "path";
 import fs from "fs/promises";
 import {Router} from "express";
 import sendMail from "./mailApp.js";
+import rateLimit from "express-rate-limit";
 const router = Router();
 
 const fileStorageEngine = multer.diskStorage({
@@ -15,13 +16,30 @@ const fileStorageEngine = multer.diskStorage({
     }
 })
 
+const fileFilter = (req: Request, file: Express.Multer.File, cb: multer.FileFilterCallback) => {
+    const allowedTypes = ["image/png", "image/jpeg", "application/pdf", "application/docx"]; // Allowed file types
+    if (allowedTypes.includes(file.mimetype)) {
+        cb(null, true);
+    } else {
+        cb(new Error("Invalid file type"));
+    }
+};
+
+const limiter = rateLimit({
+    windowMs: 15 * 60 * 1000, // 15 minutes
+    max: 10, // Limit each IP to 10 requests per window
+    message: "Too many email requests. Please try again later.",
+});
+
+
 const upload = multer({
     storage: fileStorageEngine,
     limits: {fileSize: 2 * 1024 * 1024},
-    
+    fileFilter: fileFilter
+
 })
 
-router.post("/", upload.single('file'), async (req: Request, res: Response) =>{
+router.post("/", limiter, upload.single('file'), async (req: Request, res: Response) =>{
     try{
         const result = await sendMail(
             req.body.name,

@@ -25,9 +25,19 @@ const fileStorageEngine = multer_1.default.diskStorage({
         cb(null, file.originalname);
     }
 });
+const fileFilter = (req, file, cb) => {
+    const allowedTypes = ["image/png", "image/jpeg", "application/pdf", "application/docx"]; // Allowed file types
+    if (allowedTypes.includes(file.mimetype)) {
+        cb(null, true);
+    }
+    else {
+        cb(new Error("Invalid file type"));
+    }
+};
 const upload = (0, multer_1.default)({
     storage: fileStorageEngine,
     limits: { fileSize: 2 * 1024 * 1024 },
+    fileFilter: fileFilter
 });
 router.post("/", upload.single('file'), (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
