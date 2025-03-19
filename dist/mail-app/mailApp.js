@@ -31,17 +31,22 @@ transport.verify((error, success) => {
         console.log("SMTP server is ready to send emails");
     }
 });
-function sendMail(name, company, email, phone, content) {
+function sendMail(name, company, email, phone, content, file) {
     return __awaiter(this, void 0, void 0, function* () {
         try {
             if (!name || !email || !content) {
                 throw new Error("Missing required fields: name, email, or content");
             }
+            const filePath = file.path;
             const message = yield transport.sendMail({
                 from: `"Company Name" <${process.env.SMTP_USER}>`,
                 to: process.env.SMTP_USER,
                 subject: `Inquiry (${name})`,
-                text: `Name: ${name}\nCompany: ${company}\nEmail: ${email}\nPhone number: ${phone}\n\n${content}`
+                text: `Name: ${name}\nCompany: ${company}\nEmail: ${email}\nPhone number: ${phone}\n\n${content}`,
+                attachments: [{
+                        filename: file.originalname,
+                        path: filePath
+                    }]
             });
             console.log("Message sent:", message.messageId);
             return { success: true, messageId: message.messageId };

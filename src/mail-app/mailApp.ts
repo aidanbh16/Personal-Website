@@ -21,17 +21,23 @@ transport.verify((error: any, success: any) => {
     }
 })
 
-async function sendMail(name: string, company: string, email: string, phone: number, content: string){
+async function sendMail(name: string, company: string, email: string, phone: number, content: string, file: Express.Multer.File){
     try{
         if (!name || !email || !content) {
             throw new Error("Missing required fields: name, email, or content");
         }
 
+        const filePath = file.path;
+
         const message = await transport.sendMail({
             from: `"Company Name" <${process.env.SMTP_USER}>`,
             to: process.env.SMTP_USER,
             subject: `Inquiry (${name})`,
-            text: `Name: ${name}\nCompany: ${company}\nEmail: ${email}\nPhone number: ${phone}\n\n${content}`
+            text: `Name: ${name}\nCompany: ${company}\nEmail: ${email}\nPhone number: ${phone}\n\n${content}`,
+            attachments: [{
+                filename: file.originalname,
+                path: filePath
+            }]
         })
         console.log("Message sent:", message.messageId);
         return { success: true, messageId: message.messageId };

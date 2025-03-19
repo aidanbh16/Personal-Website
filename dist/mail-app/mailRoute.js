@@ -13,7 +13,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 const multer_1 = __importDefault(require("multer"));
 const path_1 = __importDefault(require("path"));
-const fs_1 = require("fs");
+const promises_1 = __importDefault(require("fs/promises"));
 const express_1 = require("express");
 const mailApp_js_1 = __importDefault(require("./mailApp.js"));
 const router = (0, express_1.Router)();
@@ -25,17 +25,24 @@ const fileStorageEngine = multer_1.default.diskStorage({
         cb(null, file.originalname);
     }
 });
-const upload = (0, multer_1.default)({ storage: fileStorageEngine });
+const upload = (0, multer_1.default)({
+    storage: fileStorageEngine,
+    limits: { fileSize: 2 * 1024 * 1024 },
+});
 router.post("/", upload.single('file'), (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const result = yield (0, mailApp_js_1.default)(req.body.name, req.body.company, req.body.email, req.body.phonenumber, req.body.message, req.body.file);
+        const result = yield (0, mailApp_js_1.default)(req.body.name, req.body.company, req.body.email, req.body.phonenumber, req.body.message, req.file);
         if (result.success) {
             res.redirect('/');
-            yield fs_1.promises.unlink(req.file.path);
+            if (req.file) {
+                yield promises_1.default.unlink(req.file.path);
+            }
         }
         else {
             res.redirect('/');
-            yield fs_1.promises.unlink(req.file.path);
+            if (req.file) {
+                yield promises_1.default.unlink(req.file.path);
+            }
             throw new Error("Failed to send email");
         }
     }
