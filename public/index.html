@@ -3,20 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Name</title>
     <link rel="stylesheet" href="css/output.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Fragment+Mono:ital@0;1&family=Funnel+Sans:ital,wght@0,300..800;1,300..800&family=Gudea:ital,wght@0,400;0,700;1,400&family=Oswald:wght@200..700&family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
+    </style>    
 </head>
-<body class="w-100vh h-100vh bg-amber-50">
-    <header class="w-100vw h-10 bg-gray-300 flex">
-        <div class="w-1/2 h-10 bg-green-200">
-            Name
+<body class="w-100vh h-100vh bg-neutral-950">
+    <header class="w-100vw h-10 bg-neutral-700 flex font-primary">
+        <div class="w-1/3 h-10 flex items-center justify-start invert-95">
+            <img src="assets/github.png" class="w-7 ml-5 hover:scale-110 hover:cursor-pointer">
+            <img src="assets/instagram.png" class="w-7 mr-5 ml-5 hover:scale-110 hover:cursor-pointer">
+            <img src="assets/linkedin.png" class="w-7 hover:scale-110 hover:cursor-pointer">
         </div>
-        <nav class="w-1/2 h-10 bg-blue-200 inline-flex justify-end">
-            <div class="pl-5 pr-5">About Me</div>
-            <div class="pl-5 pr-5">Experience</div>
-            <div class="pl-5 pr-5">Skills</div>
-            <div class="pl-5 pr-5">Contact</div>
+        <div class="w-1/3 h-10 text-blue-300 flex items-center justify-center">
+            <span>Name</span>
+        </div>
+        <nav class="w-1/3 h-10 text-blue-300 flex items-center justify-end">
+            <div class="pl-5 pr-5"><span>About Me</span></div>
+            <div class="pl-5 pr-5"><span>Experience</span></div>
+            <div class="pl-5 pr-5"><span>Skills</span></div>
+            <div class="pl-5 pr-5"><span>Contact</span></div>
         </nav>
     </header>
+    <section class="w-100vw h-237 bg-neutral-800">
+        <div>
+            hi
+        </div>
+    </section>
+    <section class="w-100vw h-247 bg-neutral-200">
+        <div>
+        </div>
+    </section>
+    <section class="w-100vw h-247 bg-neutral-600 flex items-center">
+        <div class="w-1/4 bg-neutral-600"></div>
+        <div class="isolate w-1/2 lg:h-240 sm:h-250 bg-white px-6 py-24 sm:py-16 lg:px-8 rounded-5xl">
+            <div class="mx-auto max-w-2xl text-center">
+              <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Contact me</h2>
+              <p class="mt-2 text-lg leading-8 text-gray-600">Lets get in touch</p>
+            </div>
+            <form action="/send-mail" method="POST" enctype="multipart/form-data" autocomplete="off" class="mx-auto mt-8 max-w-xl sm:mt-12">
+              <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
+                <div class="sm:col-span-2">
+                  <label for="name" class="block text-sm font-semibold leading-6 text-black">Name <span class="text-red-400">*</span></label>
+                  <div class="mt-2.5">
+                    <input type="text" name="name" id="name" class="block w-full rounded-md border-1 outline-0 px-3.5 py-2 text-gray-900 placeholder:text-gray-400 sm:text-sm sm:leading-6 focus:shadow-sm focus:shadow-neutral-700" maxlength="" required>
+                  </div>
+                </div>
+                <div class="sm:col-span-2">
+                  <label for="company" class="block text-sm font-semibold leading-6 text-black">Company</label>
+                  <div class="mt-2.5">
+                    <input type="text" name="company" id="company" class="block w-full rounded-md border-1 outline-0 px-3.5 py-2 text-gray-900 placeholder:text-gray-400 sm:text-sm sm:leading-6 focus:shadow-sm focus:shadow-neutral-700" maxlength="100">
+                  </div>
+                </div>
+                <div class="sm:col-span-2">
+                  <label for="email" class="block text-sm font-semibold leading-6 text-black">Email <span class="text-red-400">*</span></label>
+                  <div class="mt-2.5">
+                    <input type="email" name="email" id="email" class="block w-full rounded-md border-1 outline-0 px-3.5 py-2 text-gray-900 placeholder:text-gray-400 sm:text-sm sm:leading-6 focus:shadow-sm focus:shadow-neutral-700" maxlength="254" required>
+                  </div>
+                </div>
+                <div class="sm:col-span-2">
+                  <label for="phone-number" class="block text-sm font-semibold leading-6 text-black">Phone number <span class="text-red-400">*</span></label>
+                  <div class="relative mt-2.5">
+                    <input type="number" name="phonenumber" id="phone-number" class="block w-full rounded-md border-1 outline-0 px-3.5 py-2 text-gray-900 placeholder:text-gray-400 sm:text-sm sm:leading-6 focus:shadow-sm focus:shadow-neutral-700" maxlength="15" required>
+                  </div>
+                </div>
+                <div class="sm:col-span-2">
+                  <label for="message" class="block text-sm font-semibold leading-6 text-black">Message <span class="text-red-400">*</span></label>
+                  <div class="mt-2.5">
+                    <textarea name="message" id="message" rows="4" class="block w-full rounded-md border-1 outline-0 px-3.5 py-2 text-gray-900 placeholder:text-gray-400 sm:text-sm sm:leading-6 focus:shadow-sm focus:shadow-neutral-700" required></textarea>
+                  </div>
+                </div>
+                <div class="sm:col-span-2">
+                    <label for="phone-number" class="block text-sm font-semibold leading-6 text-black">Attachments</label>
+                    <div class="relative mt-2.5">
+                      <input type="file" name="file" id="file" class="block bg-neutral-200 hover:bg-neutral-300 border-neutral-950 border-1 pl-3 rounded-md sm:text-sm sm:leading-6 hover:cursor-pointer overflow-hidden">
+                    </div>
+                </div>
+              </div>
+              <div class="mt-10">
+                <button type="submit" class="block w-full rounded-md bg-cyan-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-cyan-700 hover:cursor-pointer focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400">Send</button>
+              </div>
+            </form>
+        </div>
+        <div class="w-1/4 bg-neutral-600"></div>
+    </section>
 </body>
 </html>
