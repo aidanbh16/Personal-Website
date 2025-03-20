@@ -2,5 +2,6 @@
 
 @theme{
     --font-primary: "Gudea", "sans-serif";
+    --font-secondary: "Oxanium", sans-serif;
     --radius-5xl: 50px;
 }

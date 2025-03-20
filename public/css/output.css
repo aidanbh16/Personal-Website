@@ -7,9 +7,12 @@
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
     --color-red-400: oklch(0.704 0.191 22.216);
+    --color-orange-400: oklch(0.75 0.183 55.934);
     --color-cyan-600: oklch(0.609 0.126 221.723);
     --color-cyan-700: oklch(0.52 0.105 223.128);
-    --color-blue-300: oklch(0.809 0.105 251.813);
+    --color-sky-400: oklch(0.746 0.16 232.661);
+    --color-sky-500: oklch(0.685 0.169 237.323);
+    --color-sky-600: oklch(0.588 0.158 241.966);
     --color-indigo-400: oklch(0.673 0.182 276.935);
     --color-gray-400: oklch(0.707 0.022 261.325);
     --color-gray-600: oklch(0.446 0.03 256.802);
@@ -33,10 +36,13 @@
     --text-3xl--line-height: calc(2.25 / 1.875);
     --text-4xl: 2.25rem;
     --text-4xl--line-height: calc(2.5 / 2.25);
+    --text-6xl: 3.75rem;
+    --text-6xl--line-height: 1;
     --font-weight-semibold: 600;
     --font-weight-bold: 700;
     --tracking-tight: -0.025em;
     --radius-md: 0.375rem;
+    --radius-4xl: 2rem;
     --default-font-family: var(--font-sans);
     --default-font-feature-settings: var(--font-sans--font-feature-settings);
     --default-font-variation-settings: var(
@@ -50,6 +56,7 @@
       --font-mono--font-variation-settings
     );
     --font-primary: "Gudea", "sans-serif";
+    --font-secondary: "Oxanium", sans-serif;
     --radius-5xl: 50px;
   }
 }
@@ -195,11 +202,29 @@
   }
 }
 @layer utilities {
+  .absolute {
+    position: absolute;
+  }
+  .fixed {
+    position: fixed;
+  }
   .relative {
     position: relative;
   }
+  .inset-0 {
+    inset: calc(var(--spacing) * 0);
+  }
+  .top-3\/10 {
+    top: calc(3/10 * 100%);
+  }
+  .left-2\/4 {
+    left: calc(2/4 * 100%);
+  }
   .isolate {
     isolation: isolate;
+  }
+  .z-10 {
+    z-index: 10;
   }
   .mx-auto {
     margin-inline: auto;
@@ -231,14 +256,17 @@
   .grid {
     display: grid;
   }
+  .h-1\/4 {
+    height: calc(1/4 * 100%);
+  }
   .h-10 {
     height: calc(var(--spacing) * 10);
   }
-  .h-237 {
-    height: calc(var(--spacing) * 237);
-  }
   .h-247 {
     height: calc(var(--spacing) * 247);
+  }
+  .h-full {
+    height: 100%;
   }
   .w-1\/2 {
     width: calc(1/2 * 100%);
@@ -291,6 +319,9 @@
   .overflow-hidden {
     overflow: hidden;
   }
+  .rounded-4xl {
+    border-radius: var(--radius-4xl);
+  }
   .rounded-5xl {
     border-radius: var(--radius-5xl);
   }
@@ -301,8 +332,15 @@
     border-style: var(--tw-border-style);
     border-width: 1px;
   }
+  .border-2 {
+    border-style: var(--tw-border-style);
+    border-width: 2px;
+  }
   .border-neutral-950 {
     border-color: var(--color-neutral-950);
+  }
+  .border-white {
+    border-color: var(--color-white);
   }
   .bg-cyan-600 {
     background-color: var(--color-cyan-600);
@@ -313,14 +351,11 @@
   .bg-neutral-600 {
     background-color: var(--color-neutral-600);
   }
-  .bg-neutral-700 {
-    background-color: var(--color-neutral-700);
-  }
   .bg-neutral-800 {
     background-color: var(--color-neutral-800);
   }
-  .bg-neutral-950 {
-    background-color: var(--color-neutral-950);
+  .bg-orange-400 {
+    background-color: var(--color-orange-400);
   }
   .bg-white {
     background-color: var(--color-white);
@@ -352,12 +387,22 @@
   .text-center {
     text-align: center;
   }
+  .text-end {
+    text-align: end;
+  }
   .font-primary {
     font-family: var(--font-primary);
+  }
+  .font-secondary {
+    font-family: var(--font-secondary);
   }
   .text-3xl {
     font-size: var(--text-3xl);
     line-height: var(--tw-leading, var(--text-3xl--line-height));
+  }
+  .text-6xl {
+    font-size: var(--text-6xl);
+    line-height: var(--tw-leading, var(--text-6xl--line-height));
   }
   .text-lg {
     font-size: var(--text-lg);
@@ -390,9 +435,6 @@
   .text-black {
     color: var(--color-black);
   }
-  .text-blue-300 {
-    color: var(--color-blue-300);
-  }
   .text-gray-600 {
     color: var(--color-gray-600);
   }
@@ -402,12 +444,18 @@
   .text-red-400 {
     color: var(--color-red-400);
   }
+  .text-sky-400 {
+    color: var(--color-sky-400);
+  }
   .text-white {
     color: var(--color-white);
   }
   .shadow-sm {
     --tw-shadow: 0 1px 3px 0 var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 1px 2px -1px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  }
+  .\[box-shadow\:_0_1px_7px_rgb\(0_0_0_\/_0\.8\)\] {
+    box-shadow:  0 1px 7px rgb(0 0 0 / 0.8);
   }
   .outline-0 {
     outline-style: var(--tw-outline-style);
@@ -416,6 +464,9 @@
   .invert-95 {
     --tw-invert: invert(95%);
     filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,);
+  }
+  .\[text-shadow\:_0_2px_4px_rgb\(0_0_0_\/_0\.8\)\] {
+    text-shadow:  0 2px 4px rgb(0 0 0 / 0.8);
   }
   .placeholder\:text-gray-400 {
     &::placeholder {
@@ -439,6 +490,21 @@
       }
     }
   }
+  .hover\:border-2 {
+    &:hover {
+      @media (hover: hover) {
+        border-style: var(--tw-border-style);
+        border-width: 2px;
+      }
+    }
+  }
+  .hover\:border-sky-500 {
+    &:hover {
+      @media (hover: hover) {
+        border-color: var(--color-sky-500);
+      }
+    }
+  }
   .hover\:bg-cyan-700 {
     &:hover {
       @media (hover: hover) {
@@ -450,6 +516,27 @@
     &:hover {
       @media (hover: hover) {
         background-color: var(--color-neutral-300);
+      }
+    }
+  }
+  .hover\:bg-white {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-white);
+      }
+    }
+  }
+  .hover\:text-sky-600 {
+    &:hover {
+      @media (hover: hover) {
+        color: var(--color-sky-600);
+      }
+    }
+  }
+  .hover\:\[text-shadow\:none\] {
+    &:hover {
+      @media (hover: hover) {
+        text-shadow: none;
       }
     }
   }
@@ -547,6 +634,54 @@
   .\[\&\:\:-webkit-outer-spin-button\]\:appearance-none {
     &::-webkit-outer-spin-button {
       appearance: none;
+    }
+  }
+  .\[\&\>div\]\:absolute {
+    &>div {
+      position: absolute;
+    }
+  }
+  .\[\&\>div\]\:right-0 {
+    &>div {
+      right: calc(var(--spacing) * 0);
+    }
+  }
+  .\[\&\>div\]\:bottom-0 {
+    &>div {
+      bottom: calc(var(--spacing) * 0);
+    }
+  }
+  .\[\&\>div\]\:z-\[-2\] {
+    &>div {
+      z-index: -2;
+    }
+  }
+  .\[\&\>div\]\:h-full {
+    &>div {
+      height: 100%;
+    }
+  }
+  .\[\&\>div\]\:w-full {
+    &>div {
+      width: 100%;
+    }
+  }
+  .\[\&\>div\]\:bg-gradient-to-b {
+    &>div {
+      --tw-gradient-position: to bottom in oklab;
+      background-image: linear-gradient(var(--tw-gradient-stops));
+    }
+  }
+  .\[\&\>div\]\:from-sky-400 {
+    &>div {
+      --tw-gradient-from: var(--color-sky-400);
+      --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+    }
+  }
+  .\[\&\>div\]\:to-neutral-800 {
+    &>div {
+      --tw-gradient-to: var(--color-neutral-800);
+      --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
     }
   }
 }
@@ -706,4 +841,46 @@
   syntax: "*";
   inherits: false;
   initial-value: 1;
+}
+@property --tw-gradient-position {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-gradient-from {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #0000;
+}
+@property --tw-gradient-via {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #0000;
+}
+@property --tw-gradient-to {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #0000;
+}
+@property --tw-gradient-stops {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-gradient-via-stops {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-gradient-from-position {
+  syntax: "<length-percentage>";
+  inherits: false;
+  initial-value: 0%;
+}
+@property --tw-gradient-via-position {
+  syntax: "<length-percentage>";
+  inherits: false;
+  initial-value: 50%;
+}
+@property --tw-gradient-to-position {
+  syntax: "<length-percentage>";
+  inherits: false;
+  initial-value: 100%;
 }
