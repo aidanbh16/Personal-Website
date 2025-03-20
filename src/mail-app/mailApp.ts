@@ -1,5 +1,4 @@
 import nodemailer from "nodemailer";
-import path from "path";
 require('dotenv').config();
 
 const transport = nodemailer.createTransport({

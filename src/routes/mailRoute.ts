@@ -3,7 +3,7 @@ import multer from "multer";
 import path from "path";
 import fs from "fs/promises";
 import {Router} from "express";
-import sendMail from "./mailApp.js";
+import sendMail from "../mail-app/mailApp.js";
 import rateLimit from "express-rate-limit";
 const router = Router();
 

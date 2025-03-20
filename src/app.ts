@@ -7,7 +7,7 @@ app.use(express.urlencoded({extended: true}));
 app.use(express.static(path.join(__dirname, "../public")));
 
 import homeRoute from "./routes/homeRoute";
-import mailRoute from "./mail-app/mailRoute.js";
+import mailRoute from "./routes/mailRoute.js";
 
 app.use("/", homeRoute);
 app.use("/send-mail", mailRoute)
