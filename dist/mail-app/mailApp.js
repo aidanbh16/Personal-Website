@@ -37,17 +37,19 @@ function sendMail(name, company, email, phone, content, file) {
             if (!name || !email || !content) {
                 throw new Error("Missing required fields: name, email, or content");
             }
-            const filePath = file.path;
-            const message = yield transport.sendMail({
+            const messageOptions = {
                 from: `"Company Name" <${process.env.SMTP_USER}>`,
                 to: process.env.SMTP_USER,
                 subject: `Inquiry (${name})`,
-                text: `Name: ${name}\nCompany: ${company}\nEmail: ${email}\nPhone number: ${phone}\n\n${content}`,
-                attachments: [{
+                text: `Name: ${name}\nCompany: ${company}\nEmail: ${email}\nPhone number: ${phone}\n\n${content}`
+            };
+            if (file) {
+                messageOptions.attachments = [{
                         filename: file.originalname,
-                        path: filePath
-                    }]
-            });
+                        path: file.path
+                    }];
+            }
+            const message = yield transport.sendMail(messageOptions);
             console.log("Message sent:", message.messageId);
             return { success: true, messageId: message.messageId };
         }

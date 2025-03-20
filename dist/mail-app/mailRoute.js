@@ -27,7 +27,13 @@ const fileStorageEngine = multer_1.default.diskStorage({
     }
 });
 const fileFilter = (req, file, cb) => {
-    const allowedTypes = ["image/png", "image/jpeg", "application/pdf", "application/docx"]; // Allowed file types
+    const allowedTypes = [
+        "image/png",
+        "image/jpeg",
+        "application/pdf",
+        "application/msword",
+        "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    ];
     if (allowedTypes.includes(file.mimetype)) {
         cb(null, true);
     }
@@ -36,8 +42,8 @@ const fileFilter = (req, file, cb) => {
     }
 };
 const limiter = (0, express_rate_limit_1.default)({
-    windowMs: 15 * 60 * 1000, // 15 minutes
-    max: 10, // Limit each IP to 10 requests per window
+    windowMs: 15 * 60 * 1000,
+    max: 10,
     message: "Too many email requests. Please try again later.",
 });
 const upload = (0, multer_1.default)({
