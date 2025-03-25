@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Name</title>
+    <title>Aidan Holton</title>
     <link rel="stylesheet" href="css/output.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Fragment+Mono:ital@0;1&family=Funnel+Sans:ital,wght@0,300..800;1,300..800&family=Gudea:ital,wght@0,400;0,700;1,400&family=Oswald:wght@200..700&family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
@@ -15,40 +15,45 @@
         <div class="w-1/3 h-10 flex items-center justify-start invert-95">
             <img src="assets/github.png" class="w-7 ml-5 hover:scale-110 bg-orange-400 hover:cursor-pointer">
             <img src="assets/instagram.png" class="w-7 mr-5 ml-5 hover:scale-110 bg-orange-400 hover:cursor-pointer">
-            <img src="assets/linkedin.png" class="w-7 hover:scale-110 bg-orange-400 hover:cursor-pointer">
+            <img src="assets/linkedin.png" class="w-7 hover:scale-110 bg-orange-400 hover:cursor-pointer" href="https://www.linkedin.com/in/aidan-holton/" target="_blank">
         </div>
         <div class="w-1/3 h-10 text-sky-400 flex items-center justify-center">
-            <span>Aidan Holton</span>
+            <span class="font-bold">Aidan Holton</span>
         </div>
         <nav class="w-1/3 h-10 text-sky-400 flex items-center justify-end">
-            <div class="pl-5 pr-5"><span>About Me</span></div>
-            <div class="pl-5 pr-5"><span>Experience</span></div>
-            <div class="pl-5 pr-5"><span>Skills</span></div>
-            <div class="pl-5 pr-5"><span>Contact</span></div>
+            <div class="pl-5 pr-5"><span id="home" class="hover:cursor-pointer">Home</span></div>
+            <div class="pl-5 pr-5"><span id="experience" class="hover:cursor-pointer">Experience</span></div>
+            <div class="pl-5 pr-5"><span id="contact" class="hover:cursor-pointer">Contact</span></div>
+            <script src="scroll.js"></script>
         </nav>
     </header>
-    <section class="w-full h-247">
-      <div class="absolute inset-0">
-        <div class="relative h-full w-full [&>div]:absolute [&>div]:bottom-0 [&>div]:right-0 [&>div]:z-[-2] [&>div]:h-full [&>div]:w-full [&>div]:bg-gradient-to-b [&>div]:from-sky-400 [&>div]:to-neutral-800">
-          <div>
-          </div>  
-        </div>
-      </div>
+    <section class="w-full h-247 bg-gradient-to-b from-sky-400 to-neutral-800 from-20%">
       <div class="absolute top-3/10 left-2/4 w-1/4 h-1/4 block">
         <h1 class="font-secondary text-white text-6xl text-end [text-shadow:_0_2px_4px_rgb(0_0_0_/_0.8)]">Hey, I'm Aidan</h1>
-        <h3 class="font-secondary text-white text-3xl mt-10 text-end [text-shadow:_0_2px_4px_rgb(0_0_0_/_0.8)]">Welcome to my website</h3>
+        <h3 class="font-secondary text-white text-3xl mt-10 text-end [text-shadow:_0_2px_4px_rgb(0_0_0_/_0.8)]">Computer Science Major / Machine Learning Minor</h3>
         <div class="flex mt-10 justify-end">
-          <button class="w-1/3 h-10 mr-5 text-white rounded-4xl border-2 border-white hover:cursor-pointer hover:bg-white hover:text-sky-600 hover:border-sky-500 hover:border-2 [text-shadow:_0_2px_4px_rgb(0_0_0_/_0.8)] [box-shadow:_0_1px_7px_rgb(0_0_0_/_0.8)] hover:[text-shadow:none]">Test</button>
-          <button class="w-1/3 h-10 text-white rounded-4xl border-2 border-white hover:cursor-pointer hover:bg-white hover:text-sky-600 hover:border-sky-500 hover:border-2 [text-shadow:_0_2px_4px_rgb(0_0_0_/_0.8)] [box-shadow:_0_1px_7px_rgb(0_0_0_/_0.8)] hover:[text-shadow:none]">Resume</button>
+          <button class="w-1/3 h-10 mr-5 text-white rounded-4xl border-2 border-white hover:cursor-pointer hover:bg-white hover:text-sky-600 hover:font-bold hover:border-sky-500 hover:border-2 [text-shadow:_0_2px_4px_rgb(0_0_0_/_0.8)] [box-shadow:_0_1px_7px_rgb(0_0_0_/_0.8)] hover:[text-shadow:none]">Test</button>
+          <button class="w-1/3 h-10 text-white rounded-4xl border-2 border-white hover:cursor-pointer hover:bg-white hover:text-sky-600 hover:font-bold hover:border-sky-500 hover:border-2 [text-shadow:_0_2px_4px_rgb(0_0_0_/_0.8)] [box-shadow:_0_1px_7px_rgb(0_0_0_/_0.8)] hover:[text-shadow:none]">Resume</button>
         </div>
         </div>
       </div>
     </section>
     <section class="w-full h-247 bg-neutral-800">
-        <div class="block">
-          <h1>Experience</h1>
-          <div>
-          
+        <div class="flex">
+          <div class="w-1/3 h-247 bg-neutral-400 pt-10">
+            <div class="w-2/3 h-247 m-auto">
+              <h1 class="text-white font-primary text-5xl">Experience</h1>
+            </div>
+          </div>
+          <div class="w-1/3 h-247 bg-neutral-500 pt-10">
+            <div class="w-2/3 h-247 m-auto">
+              <h1 class="text-white font-primary text-5xl">Skills</h1>
+            </div>
+          </div>
+          <div class="w-1/3 h-247 bg-neutral-600 pt-10">
+            <div class="w-2/3 h-247 m-auto">
+              <h1 class="text-white font-primary text-5xl">Projects</h1>
+            </div>
           </div>
         </div>
     </section>
