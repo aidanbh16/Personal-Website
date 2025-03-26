@@ -1,3 +1,14 @@
-node_modules
+# Node modules (installed dependencies)
+node_modules/
+
+# Environment variables (sensitive data)
 .env
+
+# Build output (compiled TypeScript to JavaScript)
+dist/
+
+# Compiled CSS
+public/css/output.css
+
+# macOS system file
 .DS_Store
