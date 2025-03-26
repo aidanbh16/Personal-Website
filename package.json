@@ -5,7 +5,7 @@
   "scripts": {
     "build": "rimraf dist && npx tsc && npx tailwindcss -i src/styles/input.css -o public/css/output.css",
     "start": "npm run build && node dist/app.js",
-    "dev": "concurrently \"npx tsc -w\" \"nodemon --watch dist dist/app.js\" \"npx tailwindcss -i src/styles/input.css -o public/css/output.css --watch\""
+    "dev": "concurrently \"npx tsc -w\" \"nodemon --watch dist dist/app.js\" \"npx tailwindcss -i src/styles/input.css -o public/styles/output.css --watch\""
   },
   "author": "Aidanbh16",
   "license": "ISC",

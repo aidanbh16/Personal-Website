@@ -8,7 +8,7 @@ node_modules/
 dist/
 
 # Compiled CSS
-public/css/output.css
+public/styles/output.css
 
 # macOS system file
 .DS_Store
