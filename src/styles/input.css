@@ -5,19 +5,3 @@
     --font-secondary: "Oxanium", sans-serif;
     --radius-5xl: 50px;
 }
-
-@layer utilities {
-    .hover\:animate-raise:hover {
-      animation: homeButtons 200ms linear forwards;
-    }
-}
-
-@keyframes homeButtons{
-    0%{
-        transform: translateY(0px);
-
-    }
-    100%{
-        transform: translateY(-5px);
-    }
-}

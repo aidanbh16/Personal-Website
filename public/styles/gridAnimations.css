@@ -1,0 +1,126 @@
+.grid1SlideAnimation{
+    animation: grid1Slide 250ms ease-in forwards;
+}
+
+.grid2SlideAnimation{
+    animation: grid2Slide 250ms ease-in forwards;
+}
+
+.grid3SlideAnimation{
+    animation: grid3Slide 250ms ease-in forwards;
+}
+
+.grid4SlideAnimation{
+    animation: grid4Slide 250ms ease-in forwards;
+}
+
+.grid5SlideAnimation{
+    animation: grid5Slide 250ms ease-in forwards;
+}
+
+.grid7SlideAnimation{
+    animation: grid7Slide 250ms ease-in forwards;
+}
+
+.grid8SlideAnimation{
+    animation: grid8Slide 250ms ease-in forwards;
+}
+
+.grid9SlideAnimation{
+    animation: grid9Slide 250ms ease-in forwards;
+}
+
+.grid10SlideAnimation{
+    animation: grid10Slide 250ms ease-in forwards;
+}
+
+@keyframes grid1Slide{
+    from {
+        transform: translatex(-800px);
+    }
+    to {
+        opacity: 1;
+        transform: translatex(0);
+    }
+}
+
+@keyframes grid2Slide{
+    from {
+        transform: translatex(-800px);
+    }
+    to {
+        opacity: 1;
+        transform: translatex(0);
+    }
+}
+
+@keyframes grid3Slide{
+    from {
+        transform: translatey(-200px);
+    }
+    to {
+        opacity: 1;
+        transform: translatey(0);
+    }
+}
+
+@keyframes grid4Slide{
+    from {
+        transform: translatey(-400px);
+    }
+    to {
+        opacity: 1;
+        transform: translatey(0);
+    }
+}
+
+
+@keyframes grid5Slide{
+    from {
+        transform: translatex(500px);
+    }
+    to {
+        opacity: 1;
+        transform: translatex(0);
+    }
+}
+
+@keyframes grid7Slide{
+    from {
+        transform: translatex(500px);
+    }
+    to {
+        opacity: 1;
+        transform: translatex(0);
+    }
+}
+
+@keyframes grid8Slide{
+    from {
+        transform: translatey(250px);
+    }
+    to {
+        opacity: 1;
+        transform: translatey(0);
+    }
+}
+
+@keyframes grid9Slide{
+    from {
+        transform: translatey(250px);
+    }
+    to {
+        opacity: 1;
+        transform: translatey(0);
+    }
+}
+
+@keyframes grid10Slide{
+    from {
+        transform: translatex(-800px);
+    }
+    to {
+        opacity: 1;
+        transform: translatex(0);
+    }
+}
