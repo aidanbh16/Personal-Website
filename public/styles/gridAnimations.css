@@ -1,41 +1,41 @@
 .grid1SlideAnimation{
-    animation: grid1Slide 250ms ease-in forwards;
+    animation: grid1Slide 200ms ease-out forwards;
 }
 
 .grid2SlideAnimation{
-    animation: grid2Slide 250ms ease-in forwards;
+    animation: grid2Slide 200ms ease-out forwards;
 }
 
 .grid3SlideAnimation{
-    animation: grid3Slide 250ms ease-in forwards;
+    animation: grid3Slide 200ms ease-out forwards;
 }
 
 .grid4SlideAnimation{
-    animation: grid4Slide 250ms ease-in forwards;
+    animation: grid4Slide 200ms ease-out forwards;
 }
 
 .grid5SlideAnimation{
-    animation: grid5Slide 250ms ease-in forwards;
+    animation: grid5Slide 200ms ease-out forwards;
 }
 
 .grid6SlideAnimation{
-    animation: grid6Slide 250ms ease-in forwards;
+    animation: grid6Slide 200ms ease-out forwards;
 }
 
 .grid7SlideAnimation{
-    animation: grid7Slide 250ms ease-in forwards;
+    animation: grid7Slide 200ms ease-out forwards;
 }
 
 .grid8SlideAnimation{
-    animation: grid8Slide 250ms ease-in forwards;
+    animation: grid8Slide 200ms ease-out forwards;
 }
 
 .grid9SlideAnimation{
-    animation: grid9Slide 250ms ease-in forwards;
+    animation: grid9Slide 200ms ease-out forwards;
 }
 
 .grid10SlideAnimation{
-    animation: grid10Slide 250ms ease-in forwards;
+    animation: grid10Slide 200ms ease-out forwards;
 }
 
 @keyframes grid1Slide{
