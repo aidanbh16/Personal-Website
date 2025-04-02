@@ -7,14 +7,14 @@ document.getElementById("home").onclick = function () {
 
 document.getElementById("experience").onclick = function () {
     window.scrollTo({
-        top: 950,
+        top: 1175,
         behavior: "smooth"
     });
 };
 
 document.getElementById("contact").onclick = function () {
     window.scrollTo({
-        top: 1936,
+        top: 2336,
         behavior: "smooth"
     });
 };

@@ -1,7 +1,7 @@
 let animationCheck = false;
 window.addEventListener("scroll", function(){
     if (animationCheck === false){
-        if(this.window.scrollY >= 700){
+        if(this.window.scrollY >= 900){
             setTimeout(function() {
                 document.getElementById("grid1").classList.add("grid1SlideAnimation");
             }, 950);

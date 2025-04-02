@@ -12,3 +12,9 @@ public/styles/output.css
 
 # macOS system file
 .DS_Store
+
+
+# Private photos / documents
+public/assets/profilePic/IMG_0467.JPG
+public/assets/profilePic/IMG_0478.JPG
+public/assets/profilePic/IMG_0592.JPG
