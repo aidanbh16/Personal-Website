@@ -1,0 +1,25 @@
+.colorChange{
+    animation: colorRevert 200ms linear forwards
+}
+
+.colorChange:hover{
+    animation: colorChange 200ms linear forwards;
+}
+
+@keyframes colorChange{
+    from{
+        color: var(--color-sky-400)
+    }
+    to{
+        color: var(--color-white)
+    }
+}
+
+@keyframes colorRevert{
+    from{
+        color: var(--color-white)
+    }
+    to{
+        color: var(--color-sky-400)
+    }
+}

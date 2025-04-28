@@ -1,6 +1,6 @@
-let animationCheck = false;
+let gridAnimationCheck = false;
 window.addEventListener("scroll", function(){
-    if (animationCheck === false){
+    if (gridAnimationCheck === false){
         if(this.window.scrollY >= 900){
             setTimeout(function() {
                 document.getElementById("grid1").classList.add("grid1SlideAnimation");
@@ -32,7 +32,7 @@ window.addEventListener("scroll", function(){
             setTimeout(function() {
                 document.getElementById("grid10").classList.add("grid10SlideAnimation");
             }, 500);
-            animationCheck = true;
+            gridAnimationCheck = true;
         }
     }
 })

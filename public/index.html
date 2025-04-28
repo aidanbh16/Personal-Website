@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="styles/gridAnimations.css">
     <link rel="stylesheet" href="styles/homeAnimations.css">
     <link rel="stylesheet" href="styles/slideshowAnimation.css">
+    <link rel="stylesheet" href="styles/contactAnimations.css">
+    <link rel="stylesheet" href="styles/headerAnimations.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Fragment+Mono:ital@0;1&family=Funnel+Sans:ital,wght@0,300..800;1,300..800&family=Gudea:ital,wght@0,400;0,700;1,400&family=Oswald:wght@200..700&family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Fragment+Mono:ital@0;1&family=Funnel+Sans:ital,wght@0,300..800;1,300..800&family=Gudea:ital,wght@0,400;0,700;1,400&family=Oswald:wght@200..700&family=Oxanium:wght@200..800&family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
@@ -24,22 +26,42 @@
             <span class="font-bold">Aidan Holton</span>
         </div>
         <nav class="w-1/3 h-10 text-sky-400 flex items-center justify-end">
-            <div class="pl-5 pr-5"><span id="home" class="hover:cursor-pointer">Home</span></div>
-            <div class="pl-5 pr-5"><span id="experience" class="hover:cursor-pointer">Experience</span></div>
-            <div class="pl-5 pr-5"><span id="contact" class="hover:cursor-pointer">Contact</span></div>
+            <div class="pl-5 pr-5"><span id="home" class="hover:cursor-pointer colorChange">Home</span></div>
+            <div class="pl-5 pr-5"><span id="experience" class="hover:cursor-pointer colorChange">Experience</span></div>
+            <div class="pl-5 pr-5"><span id="contact" class="hover:cursor-pointer colorChange">Contact</span></div>
             <script src="scripts/autoScroll.js"></script>
         </nav>
     </header>
     <section class="w-full h-247 bg-gradient-to-b from-sky-400 to-neutral-900 from-20%">
+      <div id="background">
+        <ul class="circles">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div >
       <div class="absolute top-3/10 left-2/4 w-1/4 h-1/4 block">
         <h1 class="font-secondary text-white text-6xl text-end [text-shadow:_0_2px_4px_rgb(0_0_0_/_0.8)]">Hey, I'm Aidan</h1>
         <h3 class="font-secondary text-white text-3xl mt-10 text-end [text-shadow:_0_2px_4px_rgb(0_0_0_/_0.8)]">Computer Science Major / Machine Learning Minor</h3>
         <div class="flex mt-10 justify-end">
-          <button class="w-1/3 h-10 mr-5 text-white rounded-4xl border-2 border-white hover:cursor-pointer hover:bg-white hover:text-sky-600 hover:font-bold hover:border-sky-500 hover:border-2 [text-shadow:_0_2px_4px_rgb(0_0_0_/_0.8)] [box-shadow:_0_1px_7px_rgb(0_0_0_/_0.8)] hover:[text-shadow:none] animate-raise">Test</button>
-          <button class="w-1/3 h-10 text-white rounded-4xl border-2 border-white hover:cursor-pointer hover:bg-white hover:text-sky-600 hover:font-bold hover:border-sky-500 hover:border-2 [text-shadow:_0_2px_4px_rgb(0_0_0_/_0.8)] [box-shadow:_0_1px_7px_rgb(0_0_0_/_0.8)] hover:[text-shadow:none] animate-raise">Resume</button>
-        </div>
+          <button class="w-1/3 h-10 mr-5 text-white rounded-4xl border-2 border-white hover:cursor-pointer hover:bg-white hover:text-sky-600 hover:font-bold hover:border-sky-500 hover:border-2 [text-shadow:_0_2px_4px_rgb(0_0_0_/_0.8)] [box-shadow:_0_1px_7px_rgb(0_0_0_/_0.8)] hover:[text-shadow:none] raise">Test</button>
+          <button id="resumeButton" class="w-1/3 h-10 text-white rounded-4xl border-2 border-white hover:cursor-pointer hover:bg-white hover:text-sky-600 hover:font-bold hover:border-sky-500 hover:border-2 [text-shadow:_0_2px_4px_rgb(0_0_0_/_0.8)] [box-shadow:_0_1px_7px_rgb(0_0_0_/_0.8)] hover:[text-shadow:none] raise">Resume</button>
         </div>
       </div>
+      <div id="resume" class="absolute top-20 h-210 w-150 hidden">
+        <iframe src="/resume/Aidan Holton Resume 2024.pdf#toolbar=0&statusbar=0" class="h-195 w-150 scroll-auto rounded-2xl"></iframe>
+        <div class="h-12 w-2/5 bg-neutral-800 m-auto rounded-b-2xl text-center">
+          <a href="resume/Aidan Holton Resume 2024.pdf" download="Aidan Holton Resume 2024.pdf"><button class="h-10 w-11/12 bg-white rounded-2xl font-primary border-2 text-sky-600 border-sky-600 font-bold raise cursor-pointer hover:text-white hover:border-white hover:bg-neutral-800" >Download</button></a>
+        </div>
+      </div>
+      <script src="scripts/resume.js"></script>
     </section>
     <section class="w-full h-50 bg-neutral-900">
       <!--filler-->
@@ -49,18 +71,25 @@
         <div id="grid1" class="bg-sky-600 flex items-center justify-center [box-shadow:_0_1px_7px_rgb(0_0_0_/_0.8)] rounded-2xl opacity-0">
           <h1 class="text-white font-primary text-4xl [text-shadow:_0_2px_4px_rgb(0_0_0_/_1)]"><span>Work Experience</span></h1>
         </div>
-        <div id="grid2" class="bg-neutral-800 flex col-span-1 row-span-1 [box-shadow:_0_1px_7px_rgb(0_0_0_/_0.8)] rounded-2xl opacity-0">
-          <div class="absolute block text-white text-xl p-5">
+        <div id="grid2" class="bg-neutral-800 flex items-center col-span-1 row-span-1 [box-shadow:_0_1px_7px_rgb(0_0_0_/_0.8)] rounded-2xl opacity-0">
+          <div class="ml-5 absolute block text-white text-xl font-primary">
             <p class="bold">University of North Georgia</p>
-            <p>(2022 - Present)</p>
+            <p>( 2022 - Present )</p>
+            <p>Sophomore</p>
             <p>GPA: 2.95</p>
           </div>
         </div>
-        <div id="grid3" class="bg-neutral-800 flex justify-center items-center col-span-1 row-span-2 [box-shadow:_0_1px_7px_rgb(0_0_0_/_0.8)] rounded-2xl opacity-0">
-          <img src="assets/profilePic/IMG_0592.JPG" class="absolute w-85 h-62.5 rounded-xl">
+        <div id="grid3" class="bg-neutral-800 col-span-1 row-span-2 [box-shadow:_0_1px_7px_rgb(0_0_0_/_0.8)] rounded-2xl opacity-0">
+          <div class="absolute block w-full">
+            <img src="assets/profilePic/IMG_0592.JPG" class="m-auto mt-3 h-55 rounded-xl border-1 border-white [box-shadow:_0_5px_10px_rgb(0_0_0_/_0.8)]">
+            <div class="flex justify-center gap-34 mt-2">
+              <p class="text-white text-xl [text-shadow:_0_2px_4px_rgb(0_0_0_/_0.8)] font-primary">Atlanta, GA</p>
+              <p class="text-white text-xl [text-shadow:_0_2px_4px_rgb(0_0_0_/_0.8)] font-primary">Age 21</p>
+            </div>
+          </div>
         </div>
         <div id="grid4" class="bg-neutral-800 row-span-4 [box-shadow:_0_1px_7px_rgb(0_0_0_/_0.8)] rounded-2xl opacity-0">
-          <div class="block absolute p-5">
+          <div class="block absolute p-5 ">
             <h2 class="text-white text-xl">IT Service Desk Technician</h2>
             <h3 class="text-white text-l">Jan 2024 - Present</h3>
             <h4 class="text-white text-l">University of North Georgia</h3>
@@ -78,21 +107,29 @@
           <h1 class="text-white font-primary text-4xl [text-shadow:_0_2px_4px_rgb(0_0_0_/_1)]"><span>Skills</span></h1>
         </div>
         <div id="grid6" class="bg-neutral-800 row-span-2 [box-shadow:_0_1px_7px_rgb(0_0_0_/_0.8)] rounded-2xl opacity-0">
-          <div class="absolute grid grid-cols-4 grid-rows-3 gap-3 text-white h-full w-full p-2">
-            <div class="bg-neutral-700 text-center flex items-center justify-center rounded-lg text-sm">TypeScript</div>
-            <div class="bg-neutral-700 text-center flex items-center justify-center rounded-lg text-sm">JavaScript</div>
-            <div class="bg-neutral-700 text-center flex items-center justify-center rounded-lg text-lg">NodeJS</div>
-            <div class="bg-neutral-700 text-center flex items-center justify-center rounded-lg text-sm">Tailwind CSS</div>
-            <div class="bg-neutral-700 text-center flex items-center justify-center rounded-lg text-lg">HTML5</div>
-            <div class="bg-neutral-700 text-center flex items-center justify-center rounded-lg text-lg">CSS3</div>
-            <div class="bg-neutral-700 text-center flex items-center justify-center rounded-lg text-lg">Git</div>
+          <div class="absolute grid grid-cols-4 grid-rows-3 gap-3 text-white font-secondary h-full w-full p-2">
+            <div class="bg-neutral-700 text-center flex items-center justify-center rounded-lg text-sm hover:cursor-pointer [box-shadow:_0_2px_6px_rgb(0_0_0_/_0.8)]">TypeScript</div>
+            <div class="bg-neutral-700 text-center flex items-center justify-center rounded-lg text-sm hover:cursor-pointer [box-shadow:_0_2px_6px_rgb(0_0_0_/_0.8)]">JavaScript</div>
+            <div class="bg-neutral-700 text-center flex items-center justify-center rounded-lg text-lg hover:cursor-pointer [box-shadow:_0_2px_6px_rgb(0_0_0_/_0.8)]">NodeJS</div>
+            <div class="bg-neutral-700 text-center flex items-center justify-center rounded-lg text-sm hover:cursor-pointer [box-shadow:_0_2px_6px_rgb(0_0_0_/_0.8)]">Tailwind CSS</div>
+            <div class="bg-neutral-700 text-center flex items-center justify-center rounded-lg text-lg hover:cursor-pointer [box-shadow:_0_2px_6px_rgb(0_0_0_/_0.8)]">HTML5</div>
+            <div class="bg-neutral-700 text-center flex items-center justify-center rounded-lg text-lg hover:cursor-pointer [box-shadow:_0_2px_6px_rgb(0_0_0_/_0.8)]">CSS</div>
+            <div class="bg-neutral-700 text-center flex items-center justify-center rounded-lg text-lg hover:cursor-pointer [box-shadow:_0_2px_6px_rgb(0_0_0_/_0.8)]">Git</div>
           </div>
         </div>        
         <div id="grid7" class="bg-sky-600 flex items-center justify-center [box-shadow:_0_1px_7px_rgb(0_0_0_/_0.8)] rounded-2xl opacity-0">
           <h1 class="text-white font-primary text-4xl [text-shadow:_0_2px_4px_rgb(0_0_0_/_1)]"><span>Projects</span></h1>
         </div>
-        <div id="grid8" class="bg-neutral-800 flex row-span-3 col-span-1 [box-shadow:_0_1px_7px_rgb(0_0_0_/_0.8)] rounded-2xl opacity-0">
-
+        <div id="grid8" class="bg-neutral-800 block pr-2 pl-2 overflow-y-scroll row-span-3 col-span-1 [box-shadow:_0_1px_7px_rgb(0_0_0_/_0.8)] rounded-2xl opacity-0">
+          <a href=""><div id="project1" class="bg-neutral-700 w-11/12 h-1/5 mt-3 mb-3 rounded-xl m-auto border-white [box-shadow:_0_2px_6px_rgb(0_0_0_/_0.8)] text-white cursor-pointer hover:border-1 hover:border-white smallRaise">
+            <h1 class="text-2xl font-primary absolute w-full h-full text-center align-middle mt-3.5">Personal Portfolio</h1>
+          </div></a>
+          <div id="project2" class="bg-neutral-700 w-11/12 h-1/5 mt-3 mb-3 rounded-xl m-auto border-white [box-shadow:_0_2px_6px_rgb(0_0_0_/_0.8)] text-white cursor-pointer hover:border-1 hover:border-white smallRaise">
+            <h1 class="text-2xl font-primary absolute w-full h-full text-center align-middle mt-3.5">Upcoming Project</h1>
+          </div>
+          <div id="project3" class="bg-neutral-700 w-11/12 h-1/5 mt-3 mb-3 rounded-xl m-auto border-white [box-shadow:_0_2px_6px_rgb(0_0_0_/_0.8)] text-white cursor-pointer hover:border-1 hover:border-white smallRaise">
+            <h1 class="text-2xl font-primary absolute w-full h-full text-center align-middle mt-3.5">Upcoming Project</h1>
+          </div>
         </div>
         <div id="grid9" class="bg-neutral-800 flex items-center justify-center col-span-1 row-span-1 [box-shadow:_0_1px_7px_rgb(0_0_0_/_0.8)] rounded-2xl opacity-0 overflow-x-hidden">
           <div class="absolute inline-flex flex-nowrap w-90 overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0%,_black_50px,_black_300px,transparent_100%)]">
@@ -144,7 +181,7 @@
             </ul>
           </div>
         </div>
-        <div id="grid10" class="bg-neutral-800 flex col-span-2 row-span-1 [box-shadow:_0_1px_7px_rgb(0_0_0_/_0.8)] rounded-2xl opacity-0">
+        <div id="grid10" class="bg-neutral-800 flex items-center col-span-2 row-span-1 [box-shadow:_0_1px_7px_rgb(0_0_0_/_0.8)] rounded-2xl opacity-0">
 
         </div>
       </div>
@@ -154,35 +191,65 @@
       <!--filler-->
     </section>
     <section class="w-full h-237 bg-gradient-to-b from-neutral-900 to-neutral-700 from-20%">
-      <div class="w-3/5 h-237 flex items-center justify-left m-auto">
-        <div class="h-200 w-full grid grid-cols-4 grid-rows-5 gap-x-20 gap-y-4">
-          <div id="grid1" class="bg-neutral-800 col-span-2 flex items-center justify-center [box-shadow:_0_1px_7px_rgb(0_0_0_/_0.8)] rounded-2xl"></div>
-          <div id="grid1" class="col-span-2 opacity-0"></div>
-          <div id="grid1" class="col-span-2 opacity-0"></div>
-          <div id="grid1" class="bg-neutral-800 col-span-2 row-span-2 flex items-center justify-center [box-shadow:_0_1px_7px_rgb(0_0_0_/_0.8)] rounded-2xl"></div>
-          <div id="grid1" class="bg-neutral-800 col-span-2 row-span-2 flex items-center justify-center [box-shadow:_0_1px_7px_rgb(0_0_0_/_0.8)] rounded-2xl"></div>
-          <div id="grid1" class="col-span-2 opacity-0"></div>
-          <div id="grid1" class="bg-neutral-800 col-span-2 flex items-center justify-center [box-shadow:_0_1px_7px_rgb(0_0_0_/_1)] rounded-2xl"></div>
+      <form action="/send-mail" method="POST" enctype="multipart/form-data" autocomplete="off">
+        <div class="w-3/5 h-237 flex items-center justify-left m-auto">
+          <div class="h-200 w-full grid grid-cols-4 grid-rows-5 gap-x-20 gap-y-4">
+            <div id="grid11" class="bg-neutral-800 text-white col-span-2 flex [box-shadow:_0_1px_7px_rgb(0_0_0_/_0.8)] rounded-2xl opacity-0">
+              <div class="absolute block w-full h-full">
+                <h1 class="mt-3 ml-10 text-2xl [text-shadow:_0_3px_4px_rgb(0_0_0_/_1)] font-bold tracking-widest">Contact Me</h1>
+                <div class="flex mt-3 ml-10">
+                  <div class="block">
+                    <label for="name" class="text-lg [text-shadow:_0_3px_4px_rgb(0_0_0_/_1)] font-primary">Name <span class="text-red-400">*</span></label><br>
+                    <input type="text" name="name" id="name" class="border-2 border-black bg-white text-lg text-black w-4/5 h-10 p-1 outline-0" required>
+                  </div>
+                  <div class="block justify-center">
+                    <label for="company" class="text-lg [text-shadow:_0_3px_4px_rgb(0_0_0_/_1)] font-primary">Company</label><br>
+                    <input type="text" name="company" id="company" class="border-2 border-black bg-white text-lg text-black w-4/5 h-10 p-1 outline-0" maxlength="100">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="grid12" class="col-span-2 opacity-0"></div>
+            <div id="grid13" class="text-white col-span-2 rounded-2xl opacity-0">
+              <div class="block ml-10">
+                <div class="block">
+                  <label for="email" class="text-lg [text-shadow:_0_3px_4px_rgb(0_0_0_/_1)] font-primary">Email <span class="text-red-400">*</span></label><br>
+                  <input type="email" name="email" id="email" class="border-2 border-black rounded-xl bg-white text-lg text-black w-9/10 h-10 p-1 outline-0" maxlength="254" required>
+                </div>
+                <div class="block">
+                  <label for="phone-number" class="text-lg [text-shadow:_0_3px_4px_rgb(0_0_0_/_1)] font-primary">Phone Number</label><br>
+                  <input type="number" name="phonenumber" id="phone-number" class="border-2 border-black rounded-xl bg-white text-lg text-black w-9/10 h-10 p-1 outline-0" maxlength="15">
+                </div>
+              </div>
+            </div>
+            <div id="grid14" class="bg-neutral-800 col-span-2 row-span-2 flex items-center justify-center [box-shadow:_0_1px_7px_rgb(0_0_0_/_0.8)] rounded-2xl opacity-0">
+
+            </div>
+            <div id="grid15" class="bg-neutral-800 col-span-2 row-span-2 flex [box-shadow:_0_1px_7px_rgb(0_0_0_/_0.8)] rounded-2xl h-10 opacity-0">
+              <div class="block ml-10 mt-3 text-white">
+                <label for="message" class="text-lg [text-shadow:_0_3px_4px_rgb(0_0_0_/_1)] font-primary">Message <span class="text-red-400">*</span></label><br>
+                <textarea name="message" id="message" rows="4" class="border-2 border-black bg-white text-lg text-black w-97.5 h-20 p-1 outline-0 resize-none" required></textarea>
+              </div>
+            </div>
+            <div id="grid16" class="text-white flex items-center col-span-2 rounded-2xl opacity-0">
+              <div class="ml-10 text-xl font-secondary">
+                <p>84 Wards Creek Dr</p>
+                <p class="mt-1">Dahlonega, GA</p>
+                <p class="mt-1">770-881-4178</p>
+                <p class="mt-1">aidanbh16@gmail.com</p>
+              </div>
+            </div>
+            <div id="grid17" class="bg-neutral-800 flex items-center col-span-2 [box-shadow:_0_2px_7px_rgb(0_0_0_/_1)] rounded-2xl opacity-0">
+              <div class="absolute ml-10 mb-3 w-1/2">
+                <label for="file" class="font-medium text-gray-900 dark:text-white block text-lg  font-primary">Attachments</label>
+                <input type="file" name="file" id="file" class="w-full mt-1 text-sm text-gray-900 border border-gray-300 cursor-pointer bg-gray-50 block">
+                <button type="submit" class="bg-sky-600 text-white font-bold py-2 px-4 rounded-lg cursor-pointer block mt-4 w-full">Send</button>
+              </div>
+            </div>
+          </div>
+          <script src="scripts/contactAnimations.js"></script>
         </div>
-      </div>
+      </form>
     </section>
 </body>
 </html>
-
-<!--
-<form action="/send-mail" method="POST" enctype="multipart/form-data" autocomplete="off" class="">
-  <label for="name" class="">Name <span class="text-red-400">*</span></label>
-  <input type="text" name="name" id="name" class="" required>
-  <label for="company" class="">Company</label>
-  <input type="text" name="company" id="company" class="" maxlength="100">
-  <label for="email" class="">Email <span class="text-red-400">*</span></label>
-  <input type="email" name="email" id="email" class="" maxlength="254" required>
-  <label for="phone-number" class="">Phone number</label>
-  <input type="number" name="phonenumber" id="phone-number" class="" maxlength="15">
-  <label for="message" class="">Message <span class="text-red-400">*</span></label>
-  <textarea name="message" id="message" rows="4" class="" required></textarea>
-  <label for="phone-number" class="">Attachments</label>
-  <input type="file" name="file" id="file" class="">
-  <button type="submit" class="">Send</button>
-</form>
--->

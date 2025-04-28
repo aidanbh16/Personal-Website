@@ -5,3 +5,15 @@
     --font-secondary: "Oxanium", sans-serif;
     --radius-5xl: 50px;
 }
+
+@layer utilities {
+    input[type="number"]::-webkit-inner-spin-button,
+    input[type="number"]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  
+    input[type="number"] {
+      -moz-appearance: textfield;
+    }
+}
