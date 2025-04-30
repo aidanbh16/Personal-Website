@@ -140,28 +140,33 @@
 
 }
 
-.resumeIn{
-    animation: resumeIn 400ms ease-out forwards;
+.social{
+ animation: socialOut 200ms ease-in-out forwards;
 }
 
-.resumeOut{
-    animation: resumeOut 400ms ease-in forwards;
+.social:hover{
+    animation: socialIn 200ms ease-in-out forwards;
+}
+   
+
+@keyframes socialIn{
+    from{
+        transform: scale(1);
+        opacity: 1;
+    }
+    to{
+        transform: scale(0.95);
+        opacity: 0.4;
+    }
 }
 
-@keyframes resumeIn{
-    0%{
-        transform: translateX(-600px);
+@keyframes socialOut{
+    from{
+        transform: scale(0.95);
+        opacity: 0.4;
     }
-    100%{
-        transform: translateX(80px);
-    }
-}
-
-@keyframes resumeOut{
-    0%{
-        transform: translateX(80px);
-    }
-    100%{
-        transform: translateX(-600px);
+    to{
+        transform: scale(1);
+        opacity: 1;
     }
 }
