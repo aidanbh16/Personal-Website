@@ -151,13 +151,13 @@
         transform: translateY(0px);
     };
     to {
-        transform: translateY(-2px);
+        transform: translateY(-1px);
     };
 }
 
 @keyframes buttonLower{
     from{
-        transform: translateY(-2px);
+        transform: translateY(-1px);
     };
     to {
         transform: translateY(0px);

@@ -30,8 +30,8 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     overflow: hidden;
 }
 
@@ -141,11 +141,11 @@
 }
 
 .resumeIn{
-    animation: resumeIn 200ms ease-out forwards;
+    animation: resumeIn 400ms ease-out forwards;
 }
 
 .resumeOut{
-    animation: resumeOut 200ms ease-out forwards;
+    animation: resumeOut 400ms ease-in forwards;
 }
 
 @keyframes resumeIn{
