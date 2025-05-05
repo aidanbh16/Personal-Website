@@ -19,3 +19,8 @@ public/assets/profilePic/IMG_0467.JPG
 public/assets/profilePic/IMG_0478.JPG
 public/assets/profilePic/IMG_0592.JPG
 public/resume/Aidan Holton Resume 2024.pdf
+
+# Hosting
+.firebase
+.firebaserc
+firebase.json

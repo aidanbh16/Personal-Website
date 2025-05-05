@@ -141,11 +141,11 @@
 }
 
 .social{
- animation: socialOut 200ms ease-in-out forwards;
+ animation: socialOut 300ms ease-in-out forwards;
 }
 
 .social:hover{
-    animation: socialIn 200ms ease-in-out forwards;
+    animation: socialIn 300ms ease-in-out forwards;
 }
    
 
