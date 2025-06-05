@@ -1,3 +1,5 @@
+// Mail App to be implemented in the future after routing
+
 import nodemailer from "nodemailer";
 require('dotenv').config();
 

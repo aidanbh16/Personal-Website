@@ -1,3 +1,6 @@
+// Currently only used for testing purposes
+// Routing to be implemented in the future
+
 import path from "path";
 import {Router} from "express";
 const router = Router();

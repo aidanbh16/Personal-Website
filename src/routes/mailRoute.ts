@@ -1,3 +1,5 @@
+// Mail App to be implemented in the future after routing
+
 import {Request, Response} from "express";
 import multer from "multer";
 import path from "path";

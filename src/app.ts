@@ -1,3 +1,6 @@
+// Currently only used for testing purposes
+// Routing to be implemented in the future
+
 import express from "express";
 import path from "path";
 const PORT = process.env.PORT || 3000;
