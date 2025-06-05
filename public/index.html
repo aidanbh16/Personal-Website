@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,20 +12,22 @@
         @import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Fragment+Mono:ital@0;1&family=Funnel+Sans:ital,wght@0,300..800;1,300..800&family=Gudea:ital,wght@0,400;0,700;1,400&family=Oswald:wght@200..700&family=Oxanium:wght@200..800&family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
     </style>    
 </head>
-<body class="w-full min-w-98 h-full bg-black overflow-x-hidden">
+<body class="w-full min-w-98 min-h-screen bg-black overflow-x-hidden scroll-smooth">
+    <section id="background" class="top-0 left-0 w-full h-full -z-10 pointer-events-none">
+      <ul class="circles w-full h-full"><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li></ul>
+    </section>
     <header id="header" class="w-full h-15 max-md:bg-black/70 flex items-center fixed z-10 font-primary px-10 max-md:px-5 reverseHeaderChange max-md:hidden">
         <div class="w-1/2 h-10 text-blue-400 flex items-center justify-start min-md:pl-20">
             <span id="headerName" class="font-bold text-2xl [text-shadow:_0_2px_4px_rgb(0_0_0_/_0.8)]">Aidan Holton</span>
         </div>
         <nav class="w-1/2 h-10 text-white flex items-center justify-end gap-x-10 max-md:hidden">
-            <div><span id="home" class="cursor-pointer navHover [text-shadow:_0_2px_4px_rgb(0_0_0_/_0.8)]">Home</span></div>
-            <div><span id="experience" class="cursor-pointer navHover [text-shadow:_0_2px_4px_rgb(0_0_0_/_0.8)]">Experience</span></div>
-            <div><span id="projects" class="cursor-pointer navHover [text-shadow:_0_2px_4px_rgb(0_0_0_/_0.8)]">Projects</span></div>
-            <div><span id="skills" class="cursor-pointer navHover [text-shadow:_0_2px_4px_rgb(0_0_0_/_0.8)]">Skills</span></div>
-            <div><span id="contact" class="cursor-pointer navHover [text-shadow:_0_2px_4px_rgb(0_0_0_/_0.8)]">Contact</span></div>
-        </nav>
+          <a href="#home" class="cursor-pointer navHover [text-shadow:_0_2px_4px_rgb(0_0_0_/_0.8)]">Home</a>
+          <a href="#projects" class="cursor-pointer navHover [text-shadow:_0_2px_4px_rgb(0_0_0_/_0.8)]">Projects</a>
+          <a href="#skills" class="cursor-pointer navHover [text-shadow:_0_2px_4px_rgb(0_0_0_/_0.8)]">Skills</a>
+          <a href="#contact" class="hover:cursor-pointer navHover [text-shadow:_0_2px_4px_rgb(0_0_0_/_0.8)]">Contact</a>
+      </nav>
     </header>
-    <header id="mobileHeader" class="w-full h-full max-md:bg-black/70 fixed z-10 font-primary px-10 max-md:px-5 reverseHeaderMobile min-md:hidden">
+    <header id="mobileHeader" class="w-full max-md:bg-black/70 fixed z-99 font-primary px-10 max-md:px-5 reverseHeaderMobile min-md:hidden">
       <div class="w-full h-15 flex items-center">
         <div class="w-1/2 h-10 text-blue-400 flex items-center justify-start min-md:pl-20">
           <span id="headerNameMobile" class="font-bold text-2xl">Aidan Holton</span>
@@ -37,25 +39,20 @@
       </div>
       <nav id="navMobile" class="w-full h-full text-white text-3xl font-primary text-center py-40 max-md:hidden opacity-0">
         <div><span id="homeMobile" class="cursor-pointer navHover">Home</span></div>
-        <div class="mt-10"><span id="experienceMobile" class="cursor-pointer navHover">Experience</span></div>
         <div class="mt-10"><span id="projectsMobile" class="cursor-pointer navHover">Projects</span></div>
         <div class="mt-10"><span id="skillsMobile" class="cursor-pointer navHover">Skills</span></div>
         <div class="mt-10"><span id="contactMobile" class="cursor-pointer navHover">Contact</span></div>
       </nav>
-      <script src="scripts/autoScroll.js"></script>
-      <script src="scripts/header.js"></script>
     </header>
-    <section class="w-full h-247 max-md:h-211 bg-gradient-to-b from-indigo-900 to-neutral-900 from-20%">
-      <div id="background">
-        <ul class="circles"><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li></ul>
-      </div>
-      <div class="min-md:absolute min-md:top-3/10 min-md:left-1/4 w-1/4 h-1/4 block max-md:top-1/5 max-md:w-11/12 m-auto relative">
+    <script src="scripts/header.js"></script>
+    <section id="home" class="w-full min-h-screen bg-gradient-to-b from-indigo-900 to-neutral-900 from-20%">
+      <div class="min-md:absolute min-md:top-3/10 min-md:left-1/4 w-1/4 h-1/4 block max-md:top-50 max-md:w-11/12 m-auto relative">
         <h1 class="font-secondary font-medium text-blue-400 text-7xl text-center min-md:text-start [text-shadow:_0_2px_4px_rgb(0_0_0_/_0.8)] max-md:text-6xl min-md:min-w-150">Aidan Holton</h1>
         <h3 class="font-secondary text-white text-3xl mt-10 text-center min-md:text-start [text-shadow:_0_2px_4px_rgb(0_0_0_/_0.8)] min-md:min-w-100">Computer Science Major</h3>
         <h3 class="font-secondary text-white text-3xl text-center min-md:text-start [text-shadow:_0_2px_4px_rgb(0_0_0_/_0.8)] min-md:min-w-100">Machine Learning Minor</h3>
         <div class="flex mt-5 min-md:justify-start m-auto justify-center gap-x-5 min-md:min-w-100 max-md:max-w-100">
-          <a href="resume/Aidan Holton Resume 2024.pdf" download="resume/Aidan Holton Resume 2024.pdf" class="w-1/2 h-10 text-white font-bold rounded-xl border-1 flex justify-center align-middle border-white hover:cursor-pointer hover:text-blue-600 hover:font-bold hover:border-blue-600 hover:border-2 [box-shadow:_0_1px_7px_rgb(0_0_0_/_0.8)] raise"><button id="resumeButton" class="[text-shadow:_0_2px_4px_rgb(0_0_0_/_0.8)] cursor-pointer">Download Resume</button></a>
-          <button class="w-1/3 h-10 text-white font-bold rounded-xl border-1 border-white hover:cursor-pointer hover:text-blue-600 hover:border-blue-600 hover:border-2 [text-shadow:_0_2px_4px_rgb(0_0_0_/_0.8)] [box-shadow:_0_1px_7px_rgb(0_0_0_/_0.8)] hover:[text-shadow:none] raise">Work</button>
+          <a href="resume/Resume 2025 - Aidan Holton.pdf" download="resume/Resume 2025 - Aidan Holton.pdf" class="w-1/2 h-10 text-white font-bold rounded-xl border-1 flex justify-center items-center border-white hover:cursor-pointer hover:text-blue-600 hover:font-bold hover:border-blue-600 hover:border-2 [box-shadow:_0_1px_7px_rgb(0_00/_0.8)] raise [text-shadow:_0_2px_4px_rgb(0_00/_0.8)]">Download Resume</a>
+          <a href="#projects" class="w-1/3 h-10 text-white font-bold rounded-xl border-1 border-white flex justify-center items-center hover:cursor-pointer hover:text-blue-600 hover:border-blue-600 hover:border-2 [text-shadow:_0_2px_4px_rgb(0_00/_0.8)] [box-shadow:_0_1px_7px_rgb(0_00/_0.8)] hover:[text-shadow:none] raise">Work</a>
         </div>
         <div class="w-full h-10 mt-5 flex items-center gap-x-5 justify-start max-md:justify-center invert-95">
           <a href="https://github.com/aidanbh16" target="_blank"><img src="assets/socialIcons/github.png" class="w-10 min-md:hover:cursor-pointer social"></a>
@@ -65,31 +62,81 @@
         <h3 class="font-secondary text-white mt-3 max-md:hidden">Based in Atlanta</h3>
       </div>
     </section>
-    <section class="w-full h-237 max-md:h-221 bg-neutral-900">
-      <div class="max-w-6xl mx-auto text-center max-md:px-5">
-        <h2 class="text-5xl font-bold text-white mb-10 pt-25 tracking-tight [text-shadow:_0_2px_6px_rgb(0_0_0_/_0.6)]">
-          <span class="text-blue-400">Experience</span>
+    <section id="projects" class="w-full min-h-screen bg-neutral-900 py-24 px-5">
+      <div class="max-w-7xl mx-auto">
+        <h2 class="text-center text-5xl font-bold text-white mb-20 tracking-tight [text-shadow:_0_2px_6px_rgb(0_0_0_/_0.6)]">
+          <span class="text-blue-400 font-primary">Projects</span>
         </h2>
-        <div class="bg-neutral-800/90 backdrop-blur-md rounded-3xl px-10 py-8 shadow-[0_4px_20px_rgba(0,0,0,0.8)] border border-indigo-700/40 hover:border-indigo-500/60 transition duration-300">
-          <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-4">
-            <div class="text-left">
-              <h3 class="text-3xl font-semibold text-white">IT Service Desk Technician</h3>
-              <p class="text-indigo-300 text-sm mt-1">University of North Georgia • Jan 2024 – Present</p>
+        <div class="relative group bg-neutral-800/40 border border-blue-600/30 backdrop-blur-xl rounded-3xl p-10 mb-24 shadow-[0_10px_40px_rgba(0,0,0,0.8)] transition-transform duration-300 hover:scale-[1.01] hover:border-blue-400 hover:shadow-[0_4px_30px_rgba(59,130,246,0.3)]">
+          <div class="flex flex-col md:flex-row gap-10 items-center">
+            <div class="md:w-1/2 w-full">
+              <h3 class="text-white text-4xl font-extrabold mb-4">Upcoming Project</h3>
+              <p class="text-blue-400 text-sm mb-6">[Tech Stack]</p>
+              <p class="text-neutral-200 text-lg leading-relaxed">[Brief description of your project. Keep it punchy and clear. Highlight what you built and why it's cool or useful.]</p>
+              <div class="mt-6 flex flex-wrap gap-4">
+                <a href="https://github.com/aidanbh16/Personal-Website" target="_blank" class="px-5 py-2 border border-white rounded-xl text-white hover:text-blue-400 hover:border-blue-400 transition">View Code</a>
+                <a href="" target="_blank" class="px-5 py-2 border border-white rounded-xl text-white hover:text-blue-400 hover:border-blue-400 transition">Live Demo</a>
+              </div>
             </div>
-            <div class="mt-4 md:mt-0"><span class="inline-block px-4 py-1 text-xs font-medium tracking-wide uppercase bg-indigo-600/20 text-indigo-300 rounded-full">Part-Time | On-Campus</span></div>
+            <div class="md:w-1/2 w-full">
+              <div class="aspect-video w-full rounded-xl bg-gradient-to-br from-blue-600 to-purple-800 opacity-90 relative overflow-hidden shadow-lg group-hover:shadow-[0_0_40px_rgba(59,130,246,0.3)]">
+                <div class="absolute inset-0 flex items-center justify-center text-white text-xl font-semibold opacity-60">Preview Image Here</div>
+              </div>
+            </div>
           </div>
-          <p class="text-neutral-200 text-lg leading-relaxed mt-4 text-left">I have hands-on experience diagnosing and resolving common software and hardware issues, performing system maintenance, and managing user accounts, including password resets and access controls. I’ve worked with ServiceNow for task management and workflow support, and I have a working understanding of local area networks, including basic network troubleshooting and connectivity diagnostics.</p>
+        </div>
+        <div class="grid md:grid-cols-12 gap-10">
+          <div class="md:col-span-5 bg-neutral-800/30 backdrop-blur-lg rounded-2xl p-6 border border-blue-600/30 hover:border-blue-400 transition-shadow duration-300 shadow-[0_4px_20px_rgba(0,0,0,0.6)] hover:shadow-[0_4px_30px_rgba(59,130,246,0.3)] hover:scale-[1.01]">
+            <h4 class="text-white text-2xl font-semibold mb-2">Personal Portfolio Website</h4>
+            <p class="text-blue-400 text-sm mb-3">HTML • TailwindCSS • TypeScript • Node • Firebase</p>
+            <p class="text-neutral-200 text-base mb-4">[Brief description of your project. Keep it punchy and clear. Highlight what you built and why it's cool or useful.]</p>
+            <div class="flex gap-4 text-sm font-medium">
+              <a href="https://github.com/aidanbh16/Personal-Website" target="_blank" class="px-5 py-2 border border-white rounded-xl text-white hover:text-blue-400 hover:border-blue-400 transition">View Code</a>
+            </div>
+          </div>
+          <div class="md:col-span-7 bg-neutral-800/30 backdrop-blur-lg rounded-2xl p-6 border border-blue-600/30 hover:border-blue-400 transition-transform duration-300 shadow-[0_4px_20px_rgba(0,0,0,0.6)] hover:shadow-[0_4px_30px_rgba(59,130,246,0.3)] hover:scale-[1.01]">
+            <h4 class="text-white text-2xl font-semibold mb-2">Upcoming Project</h4>
+            <p class="text-blue-400 text-sm mb-3">[Tech Stack]</p>
+            <p class="text-neutral-200 text-base mb-4">[More descriptive content can go here. Talk about APIs, user experience, or even challenges faced during development. Keep it clean and technical.]</p>
+            <div class="flex gap-4 text-sm font-medium">
+              <a href="" target="_blank" class="px-5 py-2 border border-white rounded-xl text-white hover:text-blue-400 hover:border-blue-400 transition">View Code</a>
+              <a href="" target="_blank" class="px-5 py-2 border border-white rounded-xl text-white hover:text-blue-400 hover:border-blue-400 transition">Live Demo</a>
+            </div>
+          </div>
         </div>
       </div>
-    </section>
-    <section class="w-full h-237 max-md:h-197 bg-gradient-to-b from-indigo-900 to-neutral-900 from-20%">
-
-    </section>
-    <section class="w-full h-237 max-md:h-197 bg-gradient-to-b from-indigo-900 to-neutral-900 from-20%">
-
-    </section>
-    <section class="w-full h-237 max-md:h-197 bg-gradient-to-b from-indigo-900 to-neutral-900 from-20%">
-
+    </section>    
+    <section id="skills" class="relative w-full min-h-screen bg-gradient-to-b from-neutral-900 via-neutral-950 to-neutral-900 px-5 py-32 overflow-hidden">
+      <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-indigo-500/5 to-transparent pointer-events-none z-0"></div>
+      <div class="relative z-10 max-w-7xl mx-auto">
+        <h2 class="text-5xl font-extrabold text-center text-white mb-16 tracking-tight [text-shadow:_0_2px_10px_rgb(99_102_241_/_0.4)]">
+          <span class="text-blue-400 font-primary">Skills</span>
+        </h2>
+        <div class="mb-20">
+          <h3 class="text-white text-xl uppercase font-bold mb-6 tracking-wide text-center">Languages</h3>
+          <div class="flex flex-wrap justify-center gap-6">
+            <div class="skill-orb">HTML5</div>
+            <div class="skill-orb">CSS3</div>
+            <div class="skill-orb">JavaScript</div>
+            <div class="skill-orb">TypeScript</div>
+          </div>
+        </div>
+        <div class="mb-20">
+          <h3 class="text-white text-xl uppercase font-bold mb-6 tracking-wide text-center">Frameworks</h3>
+          <div class="flex flex-wrap justify-center gap-6">
+            <div class="skill-orb">Tailwind CSS</div>
+            <div class="skill-orb">Express.js</div>
+          </div>
+        </div>
+        <div>
+          <h3 class="text-white text-xl uppercase font-bold mb-6 tracking-wide text-center">Tools & Hosting</h3>
+          <div class="flex flex-wrap justify-center gap-6">
+            <div class="skill-orb">Git / GitHub</div>
+            <div class="skill-orb">Node.js</div>
+            <div class="skill-orb">Firebase</div>
+          </div>
+        </div>
+      </div>
     </section>
 </body>
 </html>

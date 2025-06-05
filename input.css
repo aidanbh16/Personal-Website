@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+@safelist skill-orb;
+
+@theme{
+    --font-primary: "Gudea", "sans-serif";
+    --font-secondary: "Oxanium", sans-serif;
+    --radius-5xl: 50px;
+}
+
+@layer utilities {
+    input[type="number"]::-webkit-inner-spin-button,
+    input[type="number"]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  
+    input[type="number"] {
+      -moz-appearance: textfield;
+    }
+}
+
+@layer components {
+  .skill-orb {
+    @apply text-white px-6 py-3 rounded-full text-base font-semibold backdrop-blur-lg border border-blue-600/30
+           bg-gradient-to-br from-indigo-600/20 to-blue-600/20 shadow-[0_4px_30px_rgba(99,102,241,0.2)]
+           hover:shadow-[0_0_40px_rgba(99,102,241,0.5)] transition-all duration-300 cursor-default scale-100 hover:scale-105;
+  }
+}

@@ -1,11 +1,5 @@
-# Node modules (installed dependencies)
-node_modules/
-
 # Environment variables
 .env
-
-# Build output (compiled TypeScript to JavaScript)
-dist/
 
 # Compiled CSS
 public/styles/output.css
@@ -13,14 +7,25 @@ public/styles/output.css
 # macOS system file
 .DS_Store
 
-
 # Private photos / documents
 public/assets/profilePic/IMG_0467.JPG
 public/assets/profilePic/IMG_0478.JPG
 public/assets/profilePic/IMG_0592.JPG
-public/resume/Aidan Holton Resume 2024.pdf
+public/resume/Resume 2025 - Aidan Holton.pdf
 
 # Hosting
 .firebase
 .firebaserc
 firebase.json
+
+# Compiled JavaScript files
+dist/
+dist/**/*.js
+dist/**/*.js.map
+
+# TypeScript v1 declaration files
+typings/
+
+# Node.js dependency directory
+node_modules/
+*.local
